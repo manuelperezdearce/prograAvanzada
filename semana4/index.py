@@ -4,6 +4,7 @@ import os
 messageContinuar="\nPresiona Enter para continuar..."
 messageInvalidOption="\nIngresa una opción válida"
 messageAppClose = "\nCerrando aplicación...\nGracias por utilizar el programa"
+messageSelectOption = "\nSelecciona una opción: "
 
 # Datos de prueba
 datos = [
@@ -31,6 +32,7 @@ class Visitas:
         self.visitantes = set() # Conjunto de visitantes
 
     def agregarRegistro(self):
+        print("\n- Ingresar visita -\n")
         # Solicitar al usuario que ingrese nombre válido
         try:
             inputNombre = input("Ingrese nombre de visitante: ")
@@ -71,17 +73,17 @@ class Visitas:
         # Agregar registro a lista de registros      
         self.registros.append({"nombre":nombre, "sala": sala})
         # Agregar visitante al conjunto de visitantes automáticamente
-        self.agregarVisitante(nombre)
+        self._agregarVisitante(nombre)
     
     def leerRegistros(self):
-        print("- Lista de Registros -")
+        print("\n- Lista de Registros -\n")
         print(f"{'Nombre':<15} {'Sala':<5}")
         print("-" * 22)    
         for visita in self.registros:
             print(f"{visita['nombre']:<15} {str(visita['sala']):<5}")
     
     def listaUnicaVisitantes(self):
-        print("- Lista Única de Visitantes -")
+        print("\n- Lista Única de Visitantes -\n")
         print(f"{'Nombre':<15}")
         print("-" * 22)
         for visitante in sorted(self.visitantes):
@@ -94,28 +96,29 @@ class Visitas:
         for dato in datos:
             self.registros.append(dato)
             # Agregar visitante al conjunto de visitantes automáticamente
-            self.agregarVisitante(dato["nombre"])
+            self._agregarVisitante(dato["nombre"])
 
 class App():
     def __init__(self):
         self.visitas = Visitas()
         # Carga Inicial de Datos
-        self.visitas.cargaMasiva(datos)
+        self.visitas._cargaMasiva(datos)
 
     # Crear run del programa
     def run(self):
         while True:
-            self.limpiarConsola()
+            self._limpiarConsola()
 
             print("--- Bienvenido al Programa ---")
-            print("- Menu Principal -")
+            print("\n- Menu Principal -\n")
             print("1. Ingresar Visita")
             print("2. Lista de Registros")
             print("3. Lista Única de Visitantes")
             print("4. Salir")
             
             try:
-                option = input("Selecciona una opción: ")
+                option = input(messageSelectOption)
+                self._limpiarConsola()
                 if(option == "1"):
                     self.visitas.agregarRegistro()
                 elif(option == "2"):
