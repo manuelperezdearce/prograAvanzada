@@ -116,7 +116,7 @@ class App():
         print(f"Ruta actual: {self.current_path}\n")
         for option in self.menu:
             print(f"{option['id']:>3}. {option['name']:<20} {option['type']:<10}")
-        print(f"{len(self.menu)+1:>3}. Volver atrás")
+        print(f"\n{len(self.menu)+1:>3}. Volver atrás")
         print(f"{len(self.menu)+2:>3}. Salir\n")
 
     def _handleModule(self, item):
