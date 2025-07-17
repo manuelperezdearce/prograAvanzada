@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "titulo": "Cien Años de Soledad",
+        "genero": "Drama",
+        "anio": "1960",
+        "autor_id": 1
+    },
+    {
+        "id": 2,
+        "titulo": "El Amor en los Tiempos del Cólera",
+        "genero": "Romance",
+        "anio": "1985",
+        "autor_id": 1
+    },
+    {
+        "id": 3,
+        "titulo": "La Ciudad y los Perros",
+        "genero": "Ficción",
+        "anio": "1963",
+        "autor_id": 2
+    },
+    {
+        "id": 4,
+        "titulo": "La Casa de los Espíritus",
+        "genero": "Realismo Mágico",
+        "anio": "1982",
+        "autor_id": 3
+    },
+    {
+        "id": 5,
+        "titulo": "Ficciones",
+        "genero": "Cuentos",
+        "anio": "1944",
+        "autor_id": 4
+    },
+    {
+        "id": 6,
+        "titulo": "Rayuela",
+        "genero": "Experimental",
+        "anio": "1963",
+        "autor_id": 6
+    }
+]

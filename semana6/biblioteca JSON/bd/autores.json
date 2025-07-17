@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "nombre": "Gabriel García Márquez",
+        "nacionalidad": "Colombia"
+    },
+    {
+        "id": 2,
+        "nombre": "Mario Vargas",
+        "nacionalidad": "Perú"
+    },
+    {
+        "id": 3,
+        "nombre": "Isabel Allende",
+        "nacionalidad": "Chile"
+    },
+    {
+        "id": 4,
+        "nombre": "Jorge Luis Borges",
+        "nacionalidad": "Argentina"
+    },
+    {
+        "id": 5,
+        "nombre": "Carlos Fuentes",
+        "nacionalidad": "México"
+    },
+    {
+        "id": 6,
+        "nombre": "Julio Cortázar",
+        "nacionalidad": "Argentina"
+    },
+    {
+        "id": 7,
+        "nombre": "Ejemplo",
+        "nacionalidad": "Ejemplo"
+    }
+]
