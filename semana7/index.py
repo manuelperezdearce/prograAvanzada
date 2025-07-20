@@ -2,7 +2,7 @@ import tkinter as tk
 
 # Importar componentes
 from components.header import create_header
-from components.formulario import create_formulario
+from components.formulario import FormularioLibros
 
 
 def centrar_ventana(ventana, ancho, alto):
@@ -22,6 +22,5 @@ ventana.title("Mi ventana Principal")
 centrar_ventana(ventana, ancho=800, alto=800)
 
 header=create_header(ventana)
-formulario = create_formulario(ventana)
-
+formulario = FormularioLibros(ventana)
 ventana.mainloop()
