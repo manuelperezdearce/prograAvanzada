@@ -39,10 +39,9 @@ class VideojuegoView:
                 )
             )
 
-    def agregar_videojuego(self):
-        # Crear una ventana secundaria (modal)
+    def agregar_videojuego(self, videojuego=None):
         ventana_formulario_insert = tk.Toplevel()
-        ventana_formulario_insert.title("Agregar Videojuego")
+        ventana_formulario_insert.title("Editar Videojuego" if videojuego else "Agregar Videojuego")
         ventana_formulario_insert.geometry("300x350")
 
         form_frame = tk.LabelFrame(ventana_formulario_insert, text="Datos del Videojuego")
@@ -51,18 +50,26 @@ class VideojuegoView:
         tk.Label(form_frame, text="Título:").pack()
         entry_titulo = tk.Entry(form_frame)
         entry_titulo.pack()
+        if videojuego:
+            entry_titulo.insert(0, videojuego["titulo"])
 
         tk.Label(form_frame, text="Género:").pack()
         entry_genero = tk.Entry(form_frame)
         entry_genero.pack()
+        if videojuego:
+            entry_genero.insert(0, videojuego["genero"])
 
         tk.Label(form_frame, text="Clasificación:").pack()
         entry_clasificacion = tk.Entry(form_frame)
         entry_clasificacion.pack()
+        if videojuego:
+            entry_clasificacion.insert(0, videojuego["clasificacion"])
 
         tk.Label(form_frame, text="Plataforma:").pack()
         entry_plataforma = tk.Entry(form_frame)
         entry_plataforma.pack()
+        if videojuego:
+            entry_plataforma.insert(0, videojuego["plataforma"])
 
         def guardar():
             titulo = entry_titulo.get()
@@ -70,10 +77,21 @@ class VideojuegoView:
             clasificacion = entry_clasificacion.get()
             plataforma = entry_plataforma.get()
 
-            # Si hay un callback definido, avisamos al controlador
-            if self.on_guardar_callback:
-                self.on_guardar_callback(titulo, genero, clasificacion, plataforma)
+            if videojuego:
+                if self.on_editar_callback:
+                    self.on_editar_callback(videojuego["id"], titulo, genero, clasificacion, plataforma)
+            else:
+                if self.on_guardar_callback:
+                    self.on_guardar_callback(titulo, genero, clasificacion, plataforma)
 
             ventana_formulario_insert.destroy()
 
         tk.Button(form_frame, text="Guardar", command=guardar).pack(pady=10)
+
+
+    def get_selected_item(self):
+        if self.tree:
+            seleccion = self.tree.selection()
+            if seleccion:
+                valores = self.tree.item(seleccion[0], "values")
+                return valores[0]
