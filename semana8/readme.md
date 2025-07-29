@@ -30,6 +30,7 @@ Antes de ejecutar el programa, asegúrate de tener instalados los siguientes com
 
 ```bash
 pip install mysql-connector-python
+
 ```
 
 ---
@@ -41,6 +42,16 @@ pip install mysql-connector-python
 Puedes hacerlo desde GitHub o desde una carpeta local. Asegúrate de tener todos los archivos `.py` y carpetas necesarias.
 
 #### 2. Verifica la base de datos
+=======
+
+### 🚀 Pasos para ejecutar la aplicación
+
+### 1. Clona o descarga el proyecto
+
+Puedes hacerlo desde GitHub o desde una carpeta local. Asegúrate de tener todos los archivos `.py` y carpetas necesarias.
+
+### 2. Verifica la base de datos
+
 
 Asegúrate de que MySQL esté ejecutándose y que la base de datos `gameshark` esté creada junto con la tabla `videojuegos`. Si no, puedes crearla con el siguiente script:
 
@@ -55,6 +66,7 @@ CREATE TABLE videojuegos (
     clasificacion VARCHAR(10) NOT NULL,
     plataforma VARCHAR(50) NOT NULL
 );
+
 ```
 
 ---
@@ -64,3 +76,11 @@ CREATE TABLE videojuegos (
 ![Base de datos](./public/bd.png)
 ![Menú principal](./public/menuprincipal.png)
 ![Agregar videojuego](./public/agregarvideojuego.png)
+=======
+
+## Imágenes
+
+![alt text](./public/bd.png)
+![alt text](./public/menuprincipal.png)
+![alt text](./public/agregarvideojuego.png)
+
